@@ -1,0 +1,12 @@
+
+.services .service_icon i
+{
+    font-size: 42px;
+    color:var(--main-color1);
+}
+
+.services .content h5
+{
+    font-family: var(--font-DM-SANS);
+    font-weight: 600;
+}

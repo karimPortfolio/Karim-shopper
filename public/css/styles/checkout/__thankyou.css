@@ -1,0 +1,42 @@
+
+.thankyou
+{
+    height: 80vh;
+}
+
+.thankyou .firs_part i
+{
+    font-size: 85px;
+    color: var(--main-color1) !important;
+}
+
+.thankyou .second_part h1
+{
+    color: var(--main-color1) !important;
+    font-size: 60px;
+    font-family: var(--font-family);
+}
+
+.thankyou .second_part h5
+{
+    font-size: 23px;
+    font-family: var(--font-family);
+}
+
+.thankyou .second_part p
+{
+    font-family: var(--font-family);
+    font-size: 17px;
+}
+.thankyou .second_part a
+{
+    border: 0px solid transparent !important;
+    background-color: var(--main-color1) !important;
+    height: 50px;
+    width: 200px;
+    transition: var(--transition);
+}
+.thankyou .second_part a:hover
+{
+    transform: scale(1.1);
+}

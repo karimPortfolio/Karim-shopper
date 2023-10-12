@@ -1,0 +1,249 @@
+:root {
+    /* --main-color: #28a745; */
+    --main-color: #001d56;
+    --font-family: 'DM Sans', sans-serif;
+    --transition: all .5s ease-in-out;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.news_bar
+{
+    background-color: var(--main-color1) !important;
+}
+
+#navbar,
+#navbar_mob {
+    background-color: #FFFF !important;
+    /* background-color: #c0ffc0; */
+}
+
+#navbar {
+    width: 100%;
+    z-index: 100;
+}
+
+#navbar .search-input input
+{
+    width:260px;
+    height: 44px;
+    border: transparent !important;
+    background-color: #eeee;
+    padding-left: 20px;
+    border-radius: 35px;
+    font-size: 14px;
+}
+
+#navbar .search-input svg
+{
+    position: absolute;
+    left: 80%;
+    width: 40px;
+}
+
+.navShadow {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.homeUserProfile {
+    border: 0 solid transparent !important;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.homeUserProfile img {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.nav-cart-icon a {
+    color: #000;
+}
+
+
+
+.signup-btn
+{
+    color: #000 !important;
+    text-decoration: none !important;
+}
+
+.navCollapse ul li a
+{
+    color: #000 !important;
+    font-family: var(--font-DM-SANS);
+}
+
+.dropdown a:first-child {
+    color: #000;
+}
+
+.dropdown a:first-child:hover {
+    text-decoration: none;
+}
+
+#navbar_mob {
+    width: 100%;
+}
+
+nav .search_icon {
+    cursor: pointer;
+}
+
+nav .mob_nav_hamburger .hamburger_menu span {
+    position: relative;
+    width: 30px;
+}
+
+nav .mob_nav_hamburger .hamburger_menu span:first-of-type {
+    margin: 7px;
+}
+
+nav .mob_nav_hamburger .hamburger_menu span:last-of-type {
+    margin: 7px;
+}
+
+nav .mob_nav_hamburger .hamburger_menu span::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    border-radius: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+nav .all-app-navs-open,
+nav .all-app-navs-close {
+    width: 50%;
+    height: 100vh;
+    background-color: #FFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 400;
+    display: flex !important;
+}
+
+nav .all-app-navs-close {
+    width: 0%;
+    left: -50%;
+}
+
+#nav_collapse {
+    transition: var(--transition);
+}
+
+#nav_collapse ul {
+    position: relative;
+    top: 100px;
+}
+
+#nav_collapse .logo_close_icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#nav_collapse .logo_close_icon .logo img {
+    width: 95px;
+    height: 55px;
+}
+
+#nav_collapse .logo_close_icon .close_icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+#nav_collapse .logo_close_icon .close_icon svg {
+    color: #FFFF;
+}
+
+#nav_collapse .nav-cart-icon span {
+    font-size: 20px;
+}
+
+#nav_collapse ul li a:first-of-type {
+    color: gray;
+}
+
+#nav_collapse .nav_hr,
+#nav_collapse hr {
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    height: 2px;
+}
+
+#nav_collapse .navbar-nav .nav-item {
+    width: 95%;
+    position: relative;
+}
+
+#nav_collapse .navbar-nav .nav-item::after {
+    content: "";
+    width: 90%;
+    height: 0.3px;
+    background-color: #000;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    opacity: .2;
+}
+
+.dashboard_link a {
+    text-decoration: none !important;
+    cursor: pointer !important;
+}
+
+
+
+#nav_collapse .mob_nav_socials ul {
+    list-style: none;
+}
+
+#nav_collapse .mob_nav_socials ul li a {
+    color: var(--main-color);
+}
+
+nav .badge-pill {
+    transform: translate(-9px, -18px);
+}
+
+
+
+
+/* @media (max-width:992px)
+{
+    #navbar .navCollapse
+    {
+        width: 50% !important;
+        height: 100vh;
+        position: absolute;
+        top:0;
+        left:0;
+        background-color: #FFFF !important;
+    }
+} */
+
+@media (max-width:554px) {
+    nav .all-app-navs-open {
+        width: 100% !important;
+    }
+
+    nav .all-app-navs-close {
+        left: -100%;
+    }
+}

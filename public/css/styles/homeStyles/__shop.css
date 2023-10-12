@@ -1,0 +1,109 @@
+
+.home_shop .shop_title
+{
+    font-family: var(--font-DM-SANS);
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.home_shop .shop_title ~ h5
+{
+    color: var(--main-color1);
+}
+
+.home_shop .home_products_card
+{
+    border-radius: 9px;
+    background-color: #FFFF;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.home_shop .home_products_card .home_products_card_body
+{
+    background-color: #000000d1;
+    background-color: var(--my-color1);
+    width: 100%;
+    border-radius: 9px;
+    position: absolute;
+    top:60.5%;
+    left: 0;
+    opacity: 0;
+    transition: all .5s ease-in;
+}
+
+.home_shop .home_products_card:hover .home_products_card_body
+{
+    opacity: 1;
+}
+
+.home_shop .home_products_card:hover img
+{
+    transform: scale(1.05);
+}
+
+.home_shop .home_products_card .home_products_card_head
+{
+    height: 400px;
+}
+
+.home_shop .home_products_card .home_products_card_head::after
+{
+    content: "";
+    background:linear-gradient(160deg,#00000034,#000000d8);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 9px;
+    opacity: .4;
+}
+
+.home_shop .home_products_card .home_products_card_head img
+{
+    width: 100%;
+    height: 300px;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+
+.home_shop .home_products_card .home_products_card_body h5
+{
+     font-family: var(--font-DM-SANS);
+     font-size: 22px;
+     color: var(--main-color1) !important;
+}
+.home_shop .home_products_card .home_products_card_body p
+{
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--main-color1) !important;
+}
+.home_shop .home_products_card .home_products_card_body p span
+{
+    font-size: 13px;
+    font-weight: 400;
+    color: #929292;
+}
+
+.home_shop .home_products_card .home_products_card_body a
+{
+    color: var(--main-color1);
+    font-size: 15px;
+}
+
+.home_shop .home_products_card .home_products_card_body a span svg
+{
+     transform: translate(0,5px);
+     transition: var(--transition);
+}
+.home_shop .home_products_card .home_products_card_body a:hover
+{
+    text-decoration: none;
+}
+.home_shop .home_products_card .home_products_card_body a:hover span svg
+{
+    transform: translate(6px,5px);
+}

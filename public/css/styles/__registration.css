@@ -1,0 +1,134 @@
+
+@import url("./registerStyles/__registerImgsSlider.css");
+
+:root{
+    /* --main-color1:#4bb647; */
+    /* --main-color1:#03649d; */
+    /* --main-color1:#fdbf5c; */
+}
+
+
+.signup_page_container
+{
+    background-color: #FFFF !important;
+    height: 100vh;
+    width: 100%;
+}
+.signup_form_container .flex-col
+{
+    background-color: #FFF !important;
+}
+.signup_form_container .overflow-hidden
+{
+    /* background-color: var(--my-color1) !important; */
+    box-shadow: none !important;
+}
+
+
+.signup_page_container .signup_card
+{
+    background-color: var(--my-color1) !important;
+}
+
+.register_card
+{
+    height: 100vh !important;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.register_card .cards
+{
+    position: relative;
+    width: 500px;
+    background-color: var(--my-color1) !important;
+    border-radius: 8px;
+    min-height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#registrationForm div input,
+#forgotpassword div input
+{
+    border-radius: 5px !important;
+}
+
+#registrationForm #email,
+#registrationForm #password,
+#registrationForm #name,
+#registrationForm #password_confirmation
+{
+    height: 55px;
+    border: 0.5 solid #cacaca !important;
+}
+#registrationForm #email:focus,
+#registrationForm #password:focus,
+#registrationForm #name:focus,
+#registrationForm #password_confirmation:focus
+{
+    height: 55px;
+    outline: 2px solid #0147974c !important;
+    border: 1px solid var(--main-color1) !important;
+}
+#registrationForm #email::placeholder,
+#registrationForm #password::placeholder
+{
+    font-family: var(--font-family);
+}
+#registrationForm div label,
+#forgotpassword div label
+{
+    color: var(--main-color1);
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+#registrationForm div button
+{
+    background-color: var(--main-color1) !important;
+    border: 1px solid transparent;
+    display: block !important;
+    width: 180px;
+    height: 45px;
+    font-family: var(--font-family);
+    color: #FFFF !important;
+    border-radius: 7px !important;
+}
+
+#forgotpassword div button
+{
+    background-color: var(--main-color1) !important;
+    border: 1px solid transparent;
+    height: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+#forgotpassword div button:hover
+{
+    border: 1px solid transparent;
+}
+
+.dont_have_acc_para
+{
+    font-size: 15px;
+}
+.dont_have_acc_para a
+{
+    color: var(--main-color1);
+    text-decoration: underline;
+}
+
+
+
+@media (max-width:600px)
+{
+    .register_card .cards
+    {
+        width: 95%;
+    }
+}
+

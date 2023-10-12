@@ -1,0 +1,43 @@
+
+.signup_images_slider .carousel
+{
+    height: 100vh;
+}
+
+.signup_images_slider .carousel img
+{
+    object-fit: cover !important;
+    height: 100vh !important;
+    position: relative !important;
+}
+
+.signup_images_slider .carousel img::after
+{
+    content: "";
+    background: linear-gradient(#00000098,#00000098);
+    background: #000000e6;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index:5;
+}
+
+/* .carousel-indicators
+{
+    justify-content: end !important;
+} */
+
+.carousel-indicators li {
+    height: 8px !important;
+    border-radius: 20px !important;
+    width: 10px !important;
+    background-color: var(--my-color1) !important;
+}
+
+.carousel-indicators .active
+{
+    width: 30px !important;
+    background-color: var(--main-color1) !important;
+}

@@ -1,0 +1,82 @@
+
+
+.all_cart_products
+{
+    min-height:37vh;
+}
+
+.cart_products_table
+{
+    overflow-x: auto;
+}
+
+.all_cart_products .table img
+{
+    width: 100px;
+    height: auto;
+}
+
+.all_cart_products .table input
+{
+    width:40px;
+    height: 35px;
+    border: 0.6px solid #7777;
+    padding-left: 13px;
+}
+
+/* .all_cart_products .table input:first-of-type
+{
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--main-color);
+    outline: 1px solid #28a7467b;
+    border-radius: 2px;
+} */
+
+.all_cart_products .table button
+{
+    width: 35px;
+    height: 35px;
+    border: 0.6px solid #7777;
+    border-radius: 3px;
+    font-size: 20px;
+}
+.all_cart_products .table td,
+.all_cart_products .table th
+{
+    vertical-align: middle;
+}
+.all_cart_products .table .cart_checkbox
+{
+    width: 20px;
+    height: 20px;
+}
+
+.all_cart_products .table .cart_product_pricing .product_discount
+{
+    color: #9d9d9d;
+    font-size: 15px;
+}
+
+.all_cart_products .go_to_pay_btn button,
+.all_cart_products .go_to_pay_btn a
+{
+    background-color: var(--main-color1);
+    border: 1px solid var(--main-color1);
+}
+
+.breadcrumb li a
+{
+    color: var(--main-color1) !important;
+}
+.breadcrumb li a:hover
+{
+    color: var(--main-color1) !important;
+}
+
+table .table_delete_row form button
+{
+    background-color: var(--main-color1) !important;
+}
+
+
