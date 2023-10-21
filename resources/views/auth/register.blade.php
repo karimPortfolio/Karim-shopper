@@ -3,11 +3,11 @@
 <title>Register | Karim Shopper</title>
 @section('title' , ' Register | Karim Shopper')
 <x-guest-layout>
-    <div class="bg-white w-100 md:grid md:grid-cols-2 signup_page_container">
+    <div class="bg-white w-100 md:grid md:grid-cols-2 lg:grid-cols-3 signup_page_container">
          <div class="signup_images_slider hidden md:block">
               @include("auth.registerComp.imgSlider")
          </div>
-         <div class="signup_form_container">
+         <div class="signup_form_container md:col-span-1 lg:col-span-2">
             <x-jet-authentication-card >
                 <x-slot name="logo">
                     <a class="navbar-brand" href="/" style="font-size: 26px;"><img src=" {{ asset('images/ecommerceLogo.png') }} " style="width: 150px;height:70px;" alt=""></a>
