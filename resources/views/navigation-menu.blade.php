@@ -77,11 +77,7 @@
                                         $firstLetter = str_split($name[0]);
                                         $secondLetter = str_split($name[1]);
                                     @endphp
-                                    {{-- @if (Auth::user()->profile_photo_url !== NULL)
-                                        <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                                    @else --}}
                                         <img class="h-8 w-8 rounded-full object-cover" src="https://ui-avatars.com/api/?name={{ $firstLetter[0]."+".$secondLetter[0] }}&color=014797&background=e0eaff" alt="{{ Auth::user()->name }}" />
-                                    {{-- @endif --}}
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">

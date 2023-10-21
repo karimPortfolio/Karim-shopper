@@ -76,12 +76,12 @@ if (searchIcon !== null && searchIcon !== undefined)
     searchIcon.addEventListener('click' , () => {
         document.querySelector(".search").classList.toggle("search_close");
         document.querySelector(".search").classList.toggle("search_open");
-        document.querySelector("body").classList.add("body_shadow");
+        document.querySelector("body").classList.toggle("body_shadow");
     })
     searchIcon2.addEventListener('click' , () => {
         document.querySelector(".search2").classList.toggle("search_close2");
         document.querySelector(".search2").classList.toggle("search_open2");
-        document.querySelector("body").classList.add("body_shadow");
+        document.querySelector("body").classList.toggle("body_shadow");
     })
     document.querySelector(".close_search_bar").addEventListener('click' , () => {
         document.querySelector(".search").classList.toggle("search_close");
@@ -92,5 +92,19 @@ if (searchIcon !== null && searchIcon !== undefined)
         document.querySelector(".search2").classList.toggle("search_close2");
         document.querySelector(".search2").classList.toggle("search_open2");
         document.querySelector("body").classList.remove("body_shadow");
+    })
+    window.addEventListener( 'keydown', (event) => {
+        if (event.metaKey && (event.key === 'k' || event.key === 'K'))
+        {
+            document.querySelector(".search").classList.remove("search_close");
+            document.querySelector(".search").classList.add("search_open");
+            document.querySelector("body").classList.add("body_shadow");
+        }
+        else if (event.key === 'Escape')
+        {
+            document.querySelector(".search").classList.add("search_close");
+            document.querySelector(".search").classList.remove("search_open");
+            document.querySelector("body").classList.remove("body_shadow");
+        }
     })
 }

@@ -77,6 +77,14 @@
                   <button  class="ml-4 btn btn-success"><i class="fa-sharp fa-solid fa-magnifying-glass mr-2"></i>Search</button>
              </div>
         </form>
+        <div class="pt-3">
+            <p class="text-center d-flex justify-content-center align-items-center">
+                To close search bar press:
+                <span class="shortcuts-letters d-flex justify-content-center align-items-center ml-3">
+                    <span>esc</span>
+                </span>
+            </p>
+        </div>
 
     </div>
 </nav>
