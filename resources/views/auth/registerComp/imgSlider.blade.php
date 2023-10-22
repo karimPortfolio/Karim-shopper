@@ -10,7 +10,7 @@
         <div id="img-shadow"></div>
         <div class="carousel-caption d-none d-md-block px-9">
           <h5 class="text-start mb-4">Angelique Werner</h5>
-          <p class="text-start">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error debitis dignissimos explicabo maxime commodi, voluptatem consectetur labore soluta facere? Nesciunt dignissimos obcaecati voluptatem necessitatibus deleniti.</p>
+          <p class="text-start">Karim's Shopper is my favorite marketplace to buy any electronic products online, the offers are great and your products are shipped to you within 3 to 4 days maximum thanks to the Karim's Shopper support team.</p>
         </div>
       </div>
       <div class="carousel-item">
@@ -18,7 +18,7 @@
         <div id="img-shadow"></div>
         <div class="carousel-caption d-none d-md-block px-9">
           <h5 class="text-start mb-4">Nathalie Huerta</h5>
-          <p class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos illum optio corrupti. Doloremque, ex praesentium! Soluta, dicta sunt nostrum laboriosam.</p>
+          <p class="text-start">Karim's Shopper marketplace helped me sell products and manage my earnings easily, now i have +40 000$ earnings from Karim's Shopper. Selling products online has never been this easy.</p>
         </div>
       </div>
     </div>

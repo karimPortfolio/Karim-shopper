@@ -101,7 +101,7 @@ class ProductController extends Controller
             $product = Product::findOrFail($id);
             $product->delete();
             return redirect()->route('dashboard.products',$product->user_id)
-                            ->with('success','Post has been deleted.');
+                            ->with('success','Product has been deleted.');
         }else{
             $user_id = Auth::user()->id;
             return redirect()->route('dashboard.products',$user_id)
@@ -111,22 +111,35 @@ class ProductController extends Controller
 
     public function userInsertProduct(Request $request)
     {
-        $product = new Product();
-        $product->product_name = $request->product_name;
-        $product->price = $request->price;
-        $product->description = $request->desc;
-        $product->category = $request->category;
-        $product->product_discount = $request->product_discount;
-        $product->user_id = $request->user_id;
-        if ($request->hasFile('image'))
-        {
-            $image=$request->file('image')->getClientOriginalName();
-            $request->file('image')->move(public_path('images/products'), $image);
-            $product->image = $image;
-
-        }
-        $product->save();
-        return redirect()->route('dashboard.products' , $request->user_id)->with('','You have successfully add '.$request->product_name.' article');
+        $validator = $request->validate([
+            'product_name' => 'required | string',
+            'price' => 'required | integer',
+            'category' => 'required | string',
+            'description' => 'required | string'
+        ]);
+        //return $validator;
+        // if ($validator)
+        // {
+        //     $product = new Product();
+        //     $product->product_name = $request->product_name;
+        //     $product->price = $request->price;
+        //     $product->description = $request->desc;
+        //     $product->category = $request->category;
+        //     $product->product_discount = $request->product_discount;
+        //     $product->user_id = $request->user_id;
+        //     if ($request->hasFile('image'))
+        //     {
+        //         $image=$request->file('image')->getClientOriginalName();
+        //         $request->file('image')->move(public_path('images/products'), $image);
+        //         $product->image = $image;
+        //     }
+        //     $product->save();
+        //     return redirect()->route('dashboard.products' , $request->user_id)->with('success','You have successfully add '.$request->product_name.' article');
+        // }
+        // else
+        // {
+        //     return redirect()->route('dashboard.manageProducts.addproduct')->with('failed', 'Please provide all the required product information.');
+        // }
     }
 
     public function userEditProduct($id)
@@ -151,7 +164,7 @@ class ProductController extends Controller
         $product->product_discount = $request->product_discount;
         $product->user_id = $request->user_id;
         $product->save();
-        return redirect()->route('dashboard.products' , $request->user_id)->with('success','You have successfully edited '.$request->product_name.' post');
+        return redirect()->route('dashboard.products' , $request->user_id)->with('success','You have successfully edited '.$request->product_name.' product');
     }
 
 }

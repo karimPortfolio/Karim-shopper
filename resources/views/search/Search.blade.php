@@ -1,6 +1,6 @@
 
 @extends('Master_page')
-@section('title' , 'Karim Shopper | Search')
+@section('title' , "Karim's Shopper | Search")
 
 @livewireStyles
 @section('content')

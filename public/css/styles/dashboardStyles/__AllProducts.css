@@ -16,10 +16,6 @@
     position: absolute;
     top:0;
     left: 0;
-    -webkit-border-radius: 7px !important;
-    -moz-border-radius: 7px !important;
-    -ms-border-radius: 7px !important;
-    -o-border-radius: 7px !important;
 }
 
 
@@ -87,11 +83,18 @@
     font-size: 18px;
 }
 
-.paginate_links .page-item .active
+.paginate_links .page-item .page-link
 {
     border-radius: 0 !important;
+    color: var(--main-color1) !important;
 }
 
+.paginate_links .active .page-link
+{
+    background-color: var(--main-color1) !important;
+    border-color: var(--main-color1) !important;
+    color: #FFFF !important;
+}
 
 .editing_products_panel .product_image img
 {

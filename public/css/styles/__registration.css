@@ -1,11 +1,6 @@
 
 @import url("./registerStyles/__registerImgsSlider.css");
 
-:root{
-    /* --main-color1:#4bb647; */
-    /* --main-color1:#03649d; */
-    /* --main-color1:#fdbf5c; */
-}
 
 
 .signup_page_container
@@ -37,13 +32,14 @@
     justify-content:center;
     align-items: center;
     flex-direction: column;
+    background: linear-gradient(60deg,var(--main-color1) 50%, var(--my-color1) 50%);
 }
 
 .register_card .cards
 {
     position: relative;
     width: 500px;
-    background-color: var(--my-color1) !important;
+    background-color: #FFFF !important;
     border-radius: 8px;
     min-height: 400px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -97,6 +93,27 @@
     border-radius: 7px !important;
 }
 
+#registrationForm .password_show,
+#registrationForm .password_hide
+{
+    position: absolute;
+    left: 90%;
+    cursor: pointer;
+}
+
+
+#registrationForm .password_show svg:last-of-type,
+#registrationForm .password_hide svg:first-of-type
+{
+    display: none;
+}
+
+#registrationForm .password_hide svg:last-of-type,
+#registrationForm .password_show svg:first-of-type
+{
+    display: block;
+}
+
 #forgotpassword div button
 {
     background-color: var(--main-color1) !important;
@@ -115,11 +132,11 @@
 .dont_have_acc_para
 {
     font-size: 15px;
+    font-family: var(--font-family);
 }
 .dont_have_acc_para a
 {
     color: var(--main-color1);
-    text-decoration: underline;
 }
 
 

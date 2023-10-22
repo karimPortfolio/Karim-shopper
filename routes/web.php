@@ -11,14 +11,9 @@ use App\Http\Controllers\PaypalController;
 use App\Mail\TestMail;
 use Illuminate\Support\Facades\Mail;
 
-//Route::get('/', function () {
-//    return view('Home' , [
-//        'homeimg' => 'shop.jpeg'
-//    ]);
-//});
 
 //product manage routes
-Route::controller(ProductController::class)->group(function ($cat)
+Route::controller(ProductController::class)->group(function ()
 {
     Route::get('products/{cat}','index')->name('products');
     Route::get('/','homeProducts')->name('products');
@@ -57,11 +52,11 @@ Route::controller(CheckoutController::class)->middleware([
 });
 
 //paypal
-// Route::controller(PaypalController::class)->group(function () {
-//     Route::get("payment" , "payment")->name("payment");
-//     Route::get("payment/cancel" , "cancel")->name("payment.cancel");
-//     Route::get("payment/success" , "success")->name("payment.success");
-// });
+Route::controller(PaypalController::class)->group(function () {
+    Route::get("payment" , "payment")->name("payment");
+    Route::get("payment/cancel" , "cancel")->name("payment.cancel");
+    Route::get("payment/success" , "success")->name("payment.success");
+});
 
 //stripe payments
 Route::controller(StripeController::class)->group(function () {
@@ -95,5 +90,8 @@ Route::controller(DashboardController::class)->group(function () {
     //handle ordres
     Route::get("/dashboard/orders" , "userOrders" )->name("dashboard.orders");
 });
+
+
+
 
 

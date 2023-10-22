@@ -22,7 +22,8 @@ class DashboardController extends Controller
         $purchaces = User::find($user_id)->purchase->count();
         $earnings = DB::select("SELECT SUM(price) AS earnings FROM purchases WHERE purchases.user_id = $user_id GROUP BY user_id ");
         $purchacesBuyer = Purchase::where("buyer_id" , $user_id)->count();
-        return view("dashboard.dashboard" , compact("totalProducts" , "purchaces" , "earnings","purchacesBuyer"));
+        $orders = Order::where("user_id", $user_id)->count();
+        return view("dashboard.dashboard" , compact("totalProducts" , "purchaces" , "earnings","purchacesBuyer", "orders"));
     }
 
     public function userWhishlist()

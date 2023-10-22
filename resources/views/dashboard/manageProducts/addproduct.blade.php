@@ -10,18 +10,18 @@
 
     <div class="py-12">
         <div class="mx-auto">
-                <h1 class="text-center text-success" style="font-size: 50px;">Add new product</h1>
+                <h1 class="text-center" style="font-size: 50px;">Add new product</h1>
 
-                <div class="my-5 d-flex justify-content-center align-items-center addProductDashboard">
+                <div class="my-5 d-flex justify-content-center align-items-center flex-column addProductDashboard">
                      <form action=" {{ route('dashboard.manageProducts.store') }}" method="post" enctype="multipart/form-data" accept="images/*" style="width: 500px" >
                          @csrf
                           <div >
                               <div class="mb-3">
-                                  <label for="exampleInputEmail1"  class="form-label">Product name</label>
+                                  <label for="exampleInputEmail1"  class="form-label">Product name <span class="text-danger">*</span></label>
                                   <input type="text" class="form-control" name="product_name" id="exampleInputEmail1" aria-describedby="emailHelp">
                               </div>
                               <div class="mb-3">
-                                  <label for="exampleInputEmail1" class="form-label">Price</label>
+                                  <label for="exampleInputEmail1" class="form-label">Price <span class="text-danger">*</span></label>
                                   <input type="text" class="form-control" name="price" id="exampleInputEmail1" aria-describedby="emailHelp">
                               </div>
                               <div class="mb-3">
@@ -30,7 +30,7 @@
                               </div>
                           </div>
                            <div class="mb-3 d-flex flex-column">
-                              <label for="exampleInputEmail1" class="form-label">Category</label>
+                              <label for="exampleInputEmail1" class="form-label">Category <span class="text-danger">*</span></label>
                               <select class="form-select form-select-lg mb-3" name="category" aria-label=".form-select-lg example">
                                 <option selected value="Headphones&Accessories">Headphones & Accessories</option>
                                 <option value="Smartpones&Tablets">Smartpones & Tablets</option>
@@ -47,12 +47,17 @@
                             <input type="file" name="image" class="form-control d-none" id="formFile" >
                          </div>
                           <div>
-                               <label for="">Description</label>
+                               <label for="">Description <span class="text-danger">*</span></label>
                                <textarea class="form-control" id="exampleFormControlTextarea1" name="desc" rows="4"></textarea>
                           </div>
 
                           <button type="submit" class="btn btn-success w-100 mt-5 btnAddProduct">Add Product</button>
                         </form>
+
+                        <div class="handle_failed_messages pt-4">
+                            @include('flashMessages.flash')
+                        </div>
+
                 </div>
 
         </div>

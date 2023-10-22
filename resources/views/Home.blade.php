@@ -1,5 +1,5 @@
 @extends('Master_page')
-@section('title','Karim Shopper')
+@section('title',"Karim's Shopper")
 @section('content')
 
 <div class="hero_section w-100 d-flex justify-content-center align-items-center flex-column d-lg-block">
