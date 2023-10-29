@@ -20,7 +20,7 @@
 
 .alert-success
 {
-    background-color: #014797 !important;
+    background-color: var(--main-color1) !important;
     color: #e0eaff !important;
     border: transparent !important;
     border-left: 3px solid #e0eaff;

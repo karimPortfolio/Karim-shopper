@@ -1,0 +1,33 @@
+
+
+.not_found .back_home_btn
+{
+    background-color: var(--main-color1) !important;
+    height: 46px !important;
+    border:2px solid var(--main-color1) ;
+}
+
+.not_found h1
+{
+    color: var(--main-color1);
+    font-family: var(--font-family);
+}
+
+.not_found p{
+    font-size: 19px;
+}
+
+.not_found div svg
+{
+    color: var(--main-color1);
+}
+
+.not_found .back_home_btn svg
+{
+    transition: var(--transition);
+}
+
+.not_found .back_home_btn:hover svg
+{
+    transform: translate(-5px,0);
+}

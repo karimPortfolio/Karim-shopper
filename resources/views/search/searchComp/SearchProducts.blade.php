@@ -3,8 +3,28 @@
 <div class="row justify-content-center justify-content-md-between mt-4 mt-lg-0">
     @foreach ($products as $product)
         <div class="card col-md-5 col-lg-3 mx-3 my-4 p-0">
-            <div class="whishlist_add w-100 d-flex justify-content-end pt-3 pr-3">
-                <span class="d-flex justify-content-center align-items-center"><i class="fa-regular fa-heart empty_heart_icon active"></i><i class="fa-sharp fa-solid fa-heart full_heart_icon hidde"></i></span>
+            <div wire:click.debounce.500ms="addToWhishlist({{ $product->id }})"
+                class="whishlist_add w-100 d-flex justify-content-end pt-3 pr-3">
+                @php
+                    $inWhishlist = false;
+                    if (Auth::user()) {
+                        $user_id = Auth::user()->id;
+                        foreach ($whishlistProducts as $whishlistProduct) {
+                            if ($product->id === $whishlistProduct->product_id && $user_id === $whishlistProduct->user_id) {
+                                $inWhishlist = true;
+                            }
+                        }
+                    }
+                @endphp
+                @if ($inWhishlist)
+                    <span class="d-flex justify-content-center align-items-center"><i
+                            class="fa-regular fa-heart empty_heart_icon hidde"></i><i
+                            class="fa-sharp fa-solid fa-heart full_heart_icon active"></i></span>
+                @else
+                    <span class="d-flex justify-content-center align-items-center"><i
+                            class="fa-regular fa-heart empty_heart_icon active"></i><i
+                            class="fa-sharp fa-solid fa-heart full_heart_icon hidde"></i></span>
+                @endif
             </div>
             <div class="list_change1" >
                <img src="{{ asset("images/products/".$product->image) }}" alt="">

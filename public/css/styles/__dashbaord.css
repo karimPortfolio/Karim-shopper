@@ -2,6 +2,8 @@
 
 @import url(./dashboardStyles/__dashboardHeroSection.css);
 @import url(./dashboardStyles/__orders.css);
+@import url(./dashboardStyles/__dashboardNavbar.css);
+@import url(./dashboardStyles/__notification.css);
 
 :root
 {
@@ -75,6 +77,40 @@
 .dashboard_analytics .analytics_cards h5 span
 {
     font-size: 12px;
+}
+
+.all_notifications h5
+{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.all_notifications p
+{
+    font-size: 14px;
+    font-family: var(--font-family);
+}
+
+.all_notifications .notification_time
+{
+    color: #7e7e7eee;
+    font-size: 12px;
+}
+
+.all_notifications .unreaded
+{
+    background-color:#eeee;
+}
+
+.all_notifications .readed
+{
+    background-color: transparent;
+}
+
+.all_notifications .readed:hover
+{
+    background-color:#eeee;
 }
 
 

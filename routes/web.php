@@ -6,6 +6,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\payments\StripeController;
 use App\Http\Controllers\PaypalController;
 use App\Mail\TestMail;
@@ -92,6 +93,9 @@ Route::controller(DashboardController::class)->group(function () {
 });
 
 
-
+//notification routes
+Route::controller(NotificationController::class)->group(function () {
+    Route::get("/notification/{id}","showNotification")->name("showNotification");
+});
 
 

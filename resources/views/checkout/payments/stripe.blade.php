@@ -56,7 +56,7 @@
                                 <button class='form-control btn btn-success submit-button' type='submit'>Pay ${{ $totalProductAmount + 3 }}.00</button>
                             </div>
 
-                            <div class="error_handler justify-content-center align-items-center">
+                            {{-- <div class="error_handler justify-content-center align-items-center">
                                 <div class="alert alert-danger" role="alert">
                                       <span>Please fill All the inputs fields</span>
                                 </div>
@@ -66,7 +66,7 @@
                                 <div class='alert-danger alert' style="display:none;">
                                     Please correct the errors and try again.
                                 </div>
-                            </div>
+                            </div> --}}
                         </form>
                     </div>
                 </div>

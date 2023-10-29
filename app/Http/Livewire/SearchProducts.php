@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
 use App\Models\Product;
+use Livewire\Component;
+use App\Models\Whishlist;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class SearchProducts extends Component
 {
@@ -17,6 +19,37 @@ class SearchProducts extends Component
         "ratingFilter",
         "sortBy" => ['except' => '' , 'as' => 'sortby'],
     ];
+
+    public function addToWhishlist($id)
+    {
+
+
+        if (Auth::user())
+        {
+            $user_id = Auth::user()->id;
+            $matchedProducts = Whishlist::where("user_id" , $user_id)
+            ->where("product_id",$id)->get();
+
+            if (count($matchedProducts) > 0)
+            {
+                $whishlistProduct =Whishlist::where("user_id" , $user_id)
+                ->where("product_id",$id);
+                $whishlistProduct->delete();
+                // $this->whishlistManageMsg = "Product has been remove from your whishlist";
+                session()->flash("message" , "Product has been remove from your whishlist");
+
+            } else {
+                $newWhishlistProduct = new Whishlist;
+                $newWhishlistProduct->product_id = $id;
+                $newWhishlistProduct->user_id = $user_id;
+                $newWhishlistProduct->save();
+                session()->flash("message" , "Product has been add to your whishlist");
+            }
+        }else{
+            session()->flash("error" , "You need to login to your account first.");
+        }
+    }
+
 
     public function render()
     {
@@ -64,11 +97,13 @@ class SearchProducts extends Component
         ->count();
 
         $brands = DB::select("SELECT DISTINCT brand FROM products WHERE product_name  LIKE '%$search%' ");
+        $whishlistProducts = Whishlist::all();
         return view('livewire.search-products' , [
               "products" => $products,
               "brands" => $brands,
               "search" => $this->search,
               "numProdFound" => $numProdFound,
+              "whishlistProducts"=>$whishlistProducts,
         ]);
     }
 }

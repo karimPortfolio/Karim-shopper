@@ -6,6 +6,7 @@
 {
     height: calc(100vh - 65px)!important;
     background-color: var(--my-color1);
+    z-index: 10000;
 }
 
 .dashboard_side_bar ul li a

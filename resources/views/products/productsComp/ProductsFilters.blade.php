@@ -17,7 +17,9 @@
            <h5>Brands</h5>
            <ul class="p-0 mt-4">
                 @foreach ($brands as $brand)
-                    <li class="mt-2"><input type="checkbox" name="brand" wire:model="brandFilter" value="{{ $brand->brand }}" class="products_filter_select"><span class="ml-2">{{ ucfirst($brand->brand) }}</span></li>
+                    @if ($brand->brand !== null)
+                        <li class="mt-2"><input type="checkbox" name="brand" wire:model="brandFilter" value="{{ $brand->brand }}" class="products_filter_select"><span class="ml-2">{{ ucfirst($brand->brand) }}</span></li>
+                    @endif
                 @endforeach
            </ul>
      </div>

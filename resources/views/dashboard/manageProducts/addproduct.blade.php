@@ -8,7 +8,7 @@
 
 <x-app-layout>
 
-    <div class="py-12">
+    <div class="py-12" id="add_new_product">
         <div class="mx-auto">
                 <h1 class="text-center" style="font-size: 50px;">Add new product</h1>
 
@@ -17,25 +17,38 @@
                          @csrf
                           <div >
                               <div class="mb-3">
-                                  <label for="exampleInputEmail1"  class="form-label">Product name <span class="text-danger">*</span></label>
-                                  <input type="text" class="form-control" name="product_name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <label for="exampleInputEmail1"  class="form-label">Product name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control @error('product_name') is-invalid @enderror" name="product_name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    @error('product_name')
+                                        <div class="text-danger pt-2">{{ $message }}</div>
+                                    @enderror
                               </div>
                               <div class="mb-3">
                                   <label for="exampleInputEmail1" class="form-label">Price <span class="text-danger">*</span></label>
-                                  <input type="text" class="form-control" name="price" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  <input type="text" class="form-control  @error('price') is-invalid @enderror" name="price" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  @error('price')
+                                        <div class="text-danger pt-2">{{ $message }}</div>
+                                  @enderror
                               </div>
                               <div class="mb-3">
                                   <label for="exampleInputEmail1" class="form-label">Discount</label>
-                                  <input type="number" class="form-control" name="product_discount" id="exampleInputEmail1" placeholder="Example:20" aria-describedby="emailHelp">
+                                  <input type="number" class="form-control" name="product_discount" id="exampleInputEmail1" placeholder="Example: 20" aria-describedby="emailHelp">
+                              </div>
+                              <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">Brand</label>
+                                  <input type="number" class="form-control" name="product_discount" id="exampleInputEmail1" placeholder="Example: Apple" aria-describedby="emailHelp">
                               </div>
                           </div>
                            <div class="mb-3 d-flex flex-column">
-                              <label for="exampleInputEmail1" class="form-label">Category <span class="text-danger">*</span></label>
-                              <select class="form-select form-select-lg mb-3" name="category" aria-label=".form-select-lg example">
+                              <label for="exampleInputEmail1" class="form-label" >Category <span class="text-danger">*</span></label>
+                              <select class="form-select form-select-lg mb-3 @error('category') is-invalid @enderror" name="category" aria-label=".form-select-lg example">
                                 <option selected value="Headphones&Accessories">Headphones & Accessories</option>
                                 <option value="Smartpones&Tablets">Smartpones & Tablets</option>
                                 <option value="Laptops&Consoles">Laptops & Consoles</option>
                               </select>
+                               @error('category')
+                                        <div class="text-danger pt-2">{{ $message }}</div>
+                               @enderror
                           </div>
                           <div>
                               <input type="text"  style="display:none;" name="user_id" value={{Auth::user()->id}}>
@@ -48,10 +61,14 @@
                          </div>
                           <div>
                                <label for="">Description <span class="text-danger">*</span></label>
-                               <textarea class="form-control" id="exampleFormControlTextarea1" name="desc" rows="4"></textarea>
+                               <textarea class="form-control @error('desc') is-invalid @enderror" id="exampleFormControlTextarea1" name="desc" rows="4"></textarea>
+                               @error('desc')
+                                        <div class="text-danger pt-2">{{ $message }}</div>
+                               @enderror
                           </div>
 
-                          <button type="submit" class="btn btn-success w-100 mt-5 btnAddProduct">Add Product</button>
+
+                          <button type="submit" class="btn btn-primary w-100 mt-5 btnAddProduct">Add Product</button>
                         </form>
 
                         <div class="handle_failed_messages pt-4">

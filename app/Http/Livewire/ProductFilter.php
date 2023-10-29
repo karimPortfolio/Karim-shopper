@@ -45,7 +45,6 @@ class ProductFilter extends Component
                 $newWhishlistProduct->product_id = $id;
                 $newWhishlistProduct->user_id = $user_id;
                 $newWhishlistProduct->save();
-                // $this->whishlistManageMsg = "Product has been to your whishlist";
                 session()->flash("message" , "Product has been add to your whishlist");
             }
         }else{

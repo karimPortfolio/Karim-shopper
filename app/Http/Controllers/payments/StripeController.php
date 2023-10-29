@@ -5,15 +5,18 @@ namespace App\Http\Controllers\payments;
 use Stripe;
 use Exception;
 use App\Models\Cart;
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Purchase;
 use App\Models\OrderItem;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Notifications\ProductSold;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
 
 class StripeController extends Controller
 {
@@ -154,6 +157,9 @@ class StripeController extends Controller
                             "price" => $totPrice,
                             "payment_method" => $creditCard,
                         ]);
+                        $user = User::where("id", $product->user_id)->first();
+                        $quantity = $cartItem->quantity;
+                        Notification::send($user,new ProductSold($product, $quantity, $creditCard));
                     }
                     Cart::where("user_id", Auth::user()->id)->delete();
                     return redirect()->route("checkout.thankyou")->with("payments", true);

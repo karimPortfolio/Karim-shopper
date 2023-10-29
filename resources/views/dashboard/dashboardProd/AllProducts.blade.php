@@ -1,4 +1,4 @@
-<div class="row mt-3 dashboard_products justify-content-center justify-content-md-around">
+<div class="row px-3 px-sm-0 mt-3 dashboard_products justify-content-center justify-content-md-around">
     @foreach ($userProducts as $product)
            <div class="card col-md-5 col-lg-5 mt-4 p-0 ">
                <div class="editing_panel d-flex justify-content-end align-items-center pt-3 pe-3">

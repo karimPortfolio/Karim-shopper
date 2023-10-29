@@ -1,16 +1,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href=" {{ asset('css/main.css') }} ">
 
-
-<title>Karim Shopper | {{ Auth::user()->name }}</title>
+<title>
+    (@if(Auth::user()->unreadNotifications->count() > 0){{Auth::user()->unreadNotifications->count()}}@endif)
+    Karim's Shopper | {{ Auth::user()->name }}
+</title>
 
 <x-app-layout>
     <div class="row w-100 m-0">
-
+        
         <div class="px-2 px-md-3 col-2 col-sm-1 col-lg-3 vh-100 border-right dashboard_side_bar">
             <ul class="ps-lg-4">
                  <li class="my-4 d-flex justify-content-center justify-content-lg-start">
-                      <a href="/dashboard" class="d-flex justify-content-center justify-content-lg-start align-items-center text-decoration-none pl-lg-4 "> <span>
+                      <a href="/dashboard" class="d-flex justify-content-center justify-content-lg-start align-items-center text-decoration-none pl-lg-4 ">
+                         <span>
                           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-columns-gap" viewBox="0 0 16 16">
                           <path d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
                          </svg></span>
@@ -46,7 +49,7 @@
             </ul>
        </div>
 
-        <div class="py-7 dashboard_part2 col-10 col-sm-11  col-lg-9">
+        <div class="py-7 dashboard_part2 col-10 col-sm-11 px-0  col-lg-9">
             <div class="px-3 px-sm-5">
 
                     <h1 class="mb-2 mx-0">Products</h1>
@@ -89,10 +92,8 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-<script  src=" {{ asset('js/scripts/__dashboard.js') }} "></script>
-<script type="module" src="{{ asset("js/main.js") }}"></script>
 <script>
     $(document).ready(function() {
       $('[data-toggle="tooltip"]').tooltip();
     });
-  </script>
+</script>

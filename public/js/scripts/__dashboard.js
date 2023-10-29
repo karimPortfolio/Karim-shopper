@@ -16,5 +16,15 @@ function addProductAlertTime()
 
 }
 
+const notifications_toggle = document.querySelector('.notification_bill');
+if (notifications_toggle !== null && typeof notifications_toggle !== 'undefined')
+{
+    notifications_toggle.addEventListener('click', () => {
+        console.log('clicked')
+        document.querySelector('.drop_downed').classList.toggle('closed');
+        document.querySelector('.drop_downed').classList.toggle('opened');
+    })
+}
+
 addProductAlertTime();
 

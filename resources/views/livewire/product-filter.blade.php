@@ -11,7 +11,7 @@
             </div>
         @endif
     </div>
-    <div class="w-100 col-12 d-flex justify-content-end pr-4">
+    <div class="w-100 col-12 d-flex justify-content-end pr-5">
         @if (session()->has('error'))
             <div class="alert alert-danger" role="alert" style="width: fit-content">
                 {{ session('error') }} <a href="/login" class="text-dark">login here</a>

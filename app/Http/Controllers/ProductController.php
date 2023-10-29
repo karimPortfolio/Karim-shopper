@@ -111,35 +111,28 @@ class ProductController extends Controller
 
     public function userInsertProduct(Request $request)
     {
-        $validator = $request->validate([
+        $request->validate([
             'product_name' => 'required | string',
             'price' => 'required | integer',
             'category' => 'required | string',
-            'description' => 'required | string'
+            'desc' => 'required | string'
         ]);
-        //return $validator;
-        // if ($validator)
-        // {
-        //     $product = new Product();
-        //     $product->product_name = $request->product_name;
-        //     $product->price = $request->price;
-        //     $product->description = $request->desc;
-        //     $product->category = $request->category;
-        //     $product->product_discount = $request->product_discount;
-        //     $product->user_id = $request->user_id;
-        //     if ($request->hasFile('image'))
-        //     {
-        //         $image=$request->file('image')->getClientOriginalName();
-        //         $request->file('image')->move(public_path('images/products'), $image);
-        //         $product->image = $image;
-        //     }
-        //     $product->save();
-        //     return redirect()->route('dashboard.products' , $request->user_id)->with('success','You have successfully add '.$request->product_name.' article');
-        // }
-        // else
-        // {
-        //     return redirect()->route('dashboard.manageProducts.addproduct')->with('failed', 'Please provide all the required product information.');
-        // }
+        $product = new Product();
+        $product->product_name = $request->product_name;
+        $product->price = $request->price;
+        $product->description = $request->desc;
+        $product->category = $request->category;
+        $product->brand = $request->brand;
+        $product->product_discount = $request->product_discount;
+        $product->user_id = $request->user_id;
+        if ($request->hasFile('image'))
+        {
+            $image=$request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images/products'), $image);
+            $product->image = $image;
+        }
+        $product->save();
+        return redirect()->route('dashboard.products' , $request->user_id)->with('success','You have successfully add '.$request->product_name.' article');
     }
 
     public function userEditProduct($id)
@@ -161,6 +154,7 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->description = $request->desc;
         $product->category = $request->category;
+        $product->brand = $request->brand;
         $product->product_discount = $request->product_discount;
         $product->user_id = $request->user_id;
         $product->save();

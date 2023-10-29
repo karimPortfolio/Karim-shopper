@@ -101,3 +101,23 @@
     width: 80%;
     height: auto;
 }
+
+.editing_products_panel h1
+{
+    font-family: var(--font-family);
+    color: var(--main-color1);
+    font-size: 50px !important;
+}
+
+#add_new_product input,
+#add_new_product select,
+#add_new_product button
+{
+    height: 52px !important;
+}
+
+#add_new_product h1
+{
+    font-family: var(--font-family);
+    color: var(--main-color1);
+}
