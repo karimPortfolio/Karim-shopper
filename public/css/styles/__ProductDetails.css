@@ -1,5 +1,7 @@
 
 @import url(./productDetails/__productInfo.css);
+@import url(./productDetails/__comments.css);
+
 
 :root
 {

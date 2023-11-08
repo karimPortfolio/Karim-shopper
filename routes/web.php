@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NotificationController;
@@ -97,5 +98,11 @@ Route::controller(DashboardController::class)->group(function () {
 Route::controller(NotificationController::class)->group(function () {
     Route::get("/notification/{id}","showNotification")->name("showNotification");
 });
+
+
+//comments routes
+// Route::controller(CommentController::class)->group(function () {
+//     Route::delete("/comments/{id}/destroy","")->name("comments.destroy");
+// });
 
 

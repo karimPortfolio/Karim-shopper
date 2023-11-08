@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\Whishlist;
@@ -68,7 +69,8 @@ class ProductController extends Controller
             $session_id = session()->getId();
             $numProducts = DB::select("SELECT count(*) AS num_products FROM carts  WHERE session_id = '$session_id'");
         }
-        return view("products.ProductDetails", compact(["product","similiar_products","numProducts"]));
+        $comments = Comment::where("product_id", $id)->get();
+        return view("products.ProductDetails", compact(["product","similiar_products","numProducts", "comments"]));
     }
 
     public function userProductsDashboard()

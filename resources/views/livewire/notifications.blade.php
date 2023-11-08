@@ -31,22 +31,37 @@
         </div>
         <div class=" py-4 rounded-lg w-[420px] min-h-[130px] max-h-[560px] bg-white shadow-lg shadow-zinc-900 drop-shadow-lg" >
             <h2 class="text-3xl ml-3">Notifications @if ($notifications_num > 0) ({{ $notifications_num }}) @endif</h2>
+            {{-- <div class="mt-2 flex justify-end pr-5">
+                <a href="">Mark all as read</a>
+            </div> --}}
             <ul class="pt-4 mt-2 mb-2 all_notifications max-h-[470px] overflow-y-scroll overflow-x-hidden">
                 @if (count($notifications) > 0)
                     @foreach ($notifications as $notification)
                         <li @if ($notification->read_at === null) class="px-3 border-b-2 unreaded" @else class="border-b-3 mb-1 px-3 readed" @endif>
                             {{-- {{ $notification }} --}}
-                            <a href="{{ route("showNotification", $notification->id) }}" class="position-relative px-3 text-dark text-decoration-none">
+                            {{-- @if ($notification->type === "App\Notifications\ProductSold") --}}
+                                <a href="{{ route("showNotification", $notification->id) }}" class="position-relative px-3 text-dark text-decoration-none">
                                     <div class="flex">
                                         @if ($notification->read_at === null)
                                             <span class="badge bg-[#014797]">New</span>
                                         @endif
                                         <h5 @if ($notification->read_at === null) class="ml-2 mb-0" @else class="mb-0" @endif> {{ $notification->data['subject'] }} </h5>
                                     </div>
-
-                                <p class="mb-0 mt-2">{{ $notification->data['content'] }}</p>
-                                <p class="notification_time mt-1"> {{ \Carbon\Carbon::parse($notification->created_at)->diffForHumans() }} </p>
-                            </a>
+                                    <p class="mb-0 mt-2">{{ $notification->data['content'] }}</p>
+                                    <p class="notification_time mt-1"> {{ \Carbon\Carbon::parse($notification->created_at)->diffForHumans() }} </p>
+                                </a>
+                           {{-- @else
+                                <a href="{{ route("products.details", $notification->data['product_id']) }}" class="position-relative px-3 text-dark text-decoration-none">
+                                    <div class="flex">
+                                        @if ($notification->read_at === null)
+                                            <span class="badge bg-[#014797]">New</span>
+                                        @endif
+                                        <h5 @if ($notification->read_at === null) class="ml-2 mb-0" @else class="mb-0" @endif> {{ $notification->data['subject'] }} </h5>
+                                    </div>
+                                    <p class="mb-0 mt-2">{{ $notification->data['content'] }}</p>
+                                    <p class="notification_time mt-1"> {{ \Carbon\Carbon::parse($notification->created_at)->diffForHumans() }} </p>
+                                </a>
+                           @endif --}}
                         </li>
                     @endforeach
                 @else

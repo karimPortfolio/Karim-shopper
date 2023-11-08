@@ -48,9 +48,6 @@ class Checkout extends Component
         {
             array_push($this->cartsProducts,DB::select("SELECT products.* , carts.quantity AS quantity FROM products , carts WHERE products.id = carts.product_id AND carts.id = $cartItems->id "));
         }
-        //array_push($this->cartsProducts,Product::where("id",$cartItems->product_id)->get());
-        //array_push($this->cartsProducts,Product::find($cartItems->product_id)->cart);
-        //dd($this->cartsProducts);
         return $this->cartsProducts;
     }
 
@@ -67,63 +64,6 @@ class Checkout extends Component
              "phone" => "required|string|max:11|min:10",
         ];
     }
-
-    // public function placeOrder()
-    // {
-    //     $this->paymentmode = "Paypal payments";
-    //     $this->validate();
-    //     $order = Order::create([
-    //         "user_id" => Auth::user()->id,
-    //         "tracking_no" => "funda-".Str::random(10),
-    //         "fullname" => $this->fullname,
-    //         "email" =>$this->email,
-    //         "phone" =>$this->phone,
-    //         "city" =>$this->city,
-    //         "country" =>$this->country,
-    //         "postcode" =>$this->postcode,
-    //         "address" =>$this->address,
-    //         "notes" =>$this->notes,
-    //         "status_message" => "in progress",
-    //         "payment_mode" => $this->paymentmode,
-    //         "payment_id" => $this->paymentid
-    //     ]);
-
-    //     foreach ($this->carts as $cartItem)
-    //     {
-    //         $productPrice = Product::where("id" , $cartItem->product_id)->first();
-    //         $orderItems = OrderItem::create([
-    //              "order_id" => $order->id,
-    //              "product_id" => $cartItem->product_id,
-    //              "quantity" =>$cartItem->quantity,
-    //              "price" =>$productPrice->price,
-    //         ]);
-    //         Product::where("id",$cartItem->product_id)->decrement("quantity" , $cartItem->quantity);
-    //     }
-
-
-    //     return $order;
-
-    // }
-
-
-
-    // public function orderManage()
-    // {
-    //     $this->validate();
-    //     if ($this->validate())
-    //     {
-    //         return redirect()->route("addmoney.paymentstripe");
-    //     }
-    //     // if ($ordermanage)
-    //     // {
-    //     //      Cart::where("user_id" , Auth::user()->id)->delete();
-    //     //      $this->successmsg = "Order placed successfuly";
-    //     // } else {
-    //     //      $this->errormsg = "Something went wrong try again later";
-
-
-    //     // }
-    // }
 
     public function render()
     {

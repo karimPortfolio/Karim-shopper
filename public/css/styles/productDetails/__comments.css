@@ -1,0 +1,102 @@
+
+.product_comments  h5
+{
+    color:#7a7a7a;
+    font-size: 27px;
+}
+
+.product_comments form
+{
+    width: 60%;
+}
+
+.product_comments form button
+{
+    background-color: var(--main-color1) !important;
+    border: 2px solid var(--main-color1) !important;
+}
+
+.product_comments .user-img img
+{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.product_comments .all_comments
+{
+    width: 58%;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.product_comments .comment-details
+{
+    width: 100%;
+    background-color: #eeeeee82;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    /* box-shadow: rgba(0, 0, 0, 0.084) 1.95px 1.95px 2.6px; */
+}
+
+.product_comments .comment-details h5
+{
+    font-size: 20px;
+    color: #000;
+}
+
+.product_comments .comment-details .comment_timing
+{
+    font-size: 13px;
+    color: #9b9b9b;
+}
+
+.product_comments .comment-details .comment_likes button
+{
+    font-size: 14px;
+    color: #777 !important;
+    border: none;
+    background: transparent;
+    transition: var(--transition);
+    cursor: pointer;
+    padding: 0;
+}
+
+.product_comments .comment-details .comment_likes button:hover
+{
+    background: #eeeeee99;
+    border-radius: 5px;
+    padding: 4px 6px;
+}
+
+.product_comments .dropup .dropdown-toggle::after
+{
+    display: none !important;
+}
+
+.product_comments .dropup button
+{
+    background-color: transparent !important;
+    height: 34px !important;
+    border: none !important;
+    color: #000 !important;
+    font-size: 20px;
+    border-radius: 50% !important;
+    transition: var(--transition);
+}
+
+.product_comments .dropup button:hover
+{
+    background-color: #eeee !important;
+}
+
+@media (max-width:992px)
+{
+    .product_comments form
+    {
+        width: 100%;
+    }
+    .product_comments .all_comments
+    {
+        width: 87%;
+    }
+}
