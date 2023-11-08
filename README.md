@@ -28,6 +28,24 @@ For sellers, the application provides a comprehensive overview of sales and prof
 
 A sleek and intuitive dashboard allows sellers to manage their products, orders, and wishlists efficiently. You can easily keep track of your earnings and stay informed about your business's performance.
 
+#### Notifications: 
+  - Comment Notifications: Users receive alerts when someone comments on their product posts, keeping them informed.
+  - Like Notifications: Users are notified when their comments receive likes, acknowledging their contribution.
+  - Report Notifications: Users are alerted when their comment is reported multiple times and subsequently deleted, ensuring community standards are upheld.
+  - Sales Notifications: Users will receive a notification for successful sales transactions, providing real-time updates on their commercial activity.
+    
+#### User Comments: 
+
+Users can now engage with product posts by adding their comments, fostering a community-driven experience.
+
+#### Likes on Comments: 
+
+Users can express their appreciation for comments by liking them, adding a layer of interaction and feedback.
+
+#### Comment Reporting: 
+
+To maintain a positive and respectful environment, users can report inappropriate comments and the application automatically deletes comments with more than 10 reports with different report types or comments with more than 5 reports with the same report type.
+
 ## Why Karim's Shopper
 
 Karim's Shopper is the ultimate e-commerce solution, offering a unique and comprehensive experience for electronic product enthusiasts and sellers alike. Explore, buy, sell, and thrive within the Karim's Shopper community. Start your journey today!
