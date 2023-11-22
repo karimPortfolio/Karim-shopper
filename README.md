@@ -117,3 +117,5 @@ JavaScript is a widely used programming language for building interactive and dy
 #### Linkedin
 
 [My linkedin](https://www.linkedin.com/in/mohamed-karim-balla-b31463242/)
+
+#### Licence
