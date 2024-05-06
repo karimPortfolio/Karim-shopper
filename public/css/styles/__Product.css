@@ -1,0 +1,280 @@
+
+
+
+.breadcrumb .breadcrumb-item a
+{
+    text-decoration: none !important;
+}
+
+.products_intro .products_category div
+{
+    background-color: #ebebeb;
+    border-radius: 20px;
+}
+
+.products_intro .products_category div h1
+{
+    color: var(--main-color1);
+}
+
+.list_icon,
+.grid_icon svg
+{
+    cursor:pointer;
+}
+.list_icon:hover,
+.grid_icon svg:hover
+{
+    color: var(--main-color1) !important;
+}
+
+.products_grid .card
+{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px ;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+.products_grid .card:hover
+{
+    border: 1px solid var(--main-color1) !important;
+    box-shadow: #00000049 0px 1px 6px ;
+}
+
+.products_grid .card .whishlist_add .active
+{
+    animation-name: likeClickAnim;
+    animation-duration: .6s;
+    animation-timing-function: ease-in-out;
+}
+
+/* like click animation */
+
+@keyframes likeClickAnim
+{
+    0%
+    {
+        transform: scale(0);
+    }
+    100%
+    {
+        transform: scale(1);
+    }
+}
+
+/* animation end */
+
+
+.products_grid .card img
+{
+    border-radius: 6px;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+.products_grid .card .whishlist_add
+{
+    position: absolute;
+}
+.products_grid .card .whishlist_add span
+{
+     width: 30px;
+     height: 30px;
+     border-radius: 50%;
+     background-color: #f3f3f3;
+     box-shadow: rgba(0, 0, 0, 0.092) 0px 1px 4px ;
+     transition: var(--transition);
+     cursor: pointer;
+}
+
+.products_grid .card .whishlist_add span .full_heart_icon
+{
+    color: #ec0000;
+}
+
+.products_grid .card .whishlist_add .hidde
+{
+    display: none;
+}
+
+.products_grid .card .whishlist_add span:hover
+{
+    background-color: #eae9e9;
+    transform: scale(1.1);
+}
+
+.products_grid .card .card-body h5
+{
+    font-size: 17px;
+}
+
+.products_grid .card .card-body p
+{
+    font-size: 14px;
+}
+.products_grid .card .card-body .categ
+{
+    color: #a5a5a5;
+}
+.products_grid .card .card-body .product_rating i
+{
+    font-size: 12px;
+    color: #ffb92c;
+}
+
+.products_filter .categories ul,
+.products_filter .brands ul,
+.products_filter .rating ul
+{
+    list-style: none;
+}
+
+.products_filter .categories ul li a
+{
+    color: #777;
+    text-decoration: none;
+}
+
+.products_filter .rating ul li span i
+{
+    font-size: 15px;
+    color: #ffb92c;
+}
+
+.close_display,
+.display_sys
+{
+    transition: var(--transition);
+}
+
+.close_display
+{
+    animation-name: animClose;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    display: none;
+}
+.display_sys
+{
+    display: block;
+    animation-name: animOpen;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes animOpen{
+    0%{
+        display: block;
+        transform: scale(0);
+     }
+     100%{
+        transform: scale(1);
+     }
+}
+@keyframes animClose{
+    0%{
+        transform: scale(1);
+     }
+     100%{
+        transform: scale(0);
+        display:none;
+    }
+}
+
+@media (max-width:992px)
+{
+    .products_filtering
+    {
+        position: fixed;
+        top: 0;
+        padding-top: 100px;
+        height: 100vh;
+        overflow-y: scroll;
+        width: 40%;
+        background-color: var(--my-color1);
+        transition: var(--transition);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        z-index:5000;
+    }
+    .close_filtering_products
+    {
+        left: -100%;
+    }
+    .open_filtering_products
+    {
+         left: 0;
+    }
+    .close_filter_sidebar
+    {
+        position: absolute;
+        top:0;
+        left: 0;
+    }
+    .close_filter_sidebar span i
+    {
+        font-size: 23px;
+        transition: var(--transition);
+        cursor: pointer;
+}
+    .close_filter_sidebar span i:hover
+    {
+        color: #fa5353;
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width:660px)
+{
+    .products_filtering
+    {
+        width: 60%;
+    }
+
+    .products_intro .products_filterage
+    {
+        flex-direction: column !important;
+        justify-content: start !important;
+        align-items:flex-start !important;
+
+    }
+    .products_intro .products_filterage .second_part
+    {
+        margin-top: 16px;
+        /* width: 100%;
+        display: flex;
+        justify-content: end !important; */
+    }
+}
+
+@media (max-width:776px)
+{
+    .products_grid .card
+    {
+        width: 400px;
+        height: auto;
+    }
+}
+
+@media (max-width:576px)
+{
+    .products_intro .products_category div h1
+    {
+        font-size: 27px;
+    }
+}
+
+@media (max-width:440px)
+{
+    .products_filtering
+    {
+        width: 90%;
+    }
+
+}
+
+@media (max-width:350px)
+{
+    .products_intro .products_category div h1
+    {
+        font-size: 22px;
+    }
+}

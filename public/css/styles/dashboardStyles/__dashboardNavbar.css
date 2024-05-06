@@ -1,0 +1,88 @@
+.notification_bill
+{
+    width: 400px;
+    z-index: 300;
+}
+
+
+.notification_bill svg
+{
+    color: var(--main-color);
+}
+
+
+.notification_bill .notification_icon
+{
+    position: relative;
+    width: 35px;
+    height: 35px;
+    transition: var(--transition);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.notification_bill .notification_icon:hover
+{
+    background-color: var(--my-color1);
+    opacity: .85;
+}
+
+.notification_bill .notification_icon .badge
+{
+    left: 30px;
+    top: 4px;
+}
+
+.notification_bill  .drop_downed h2
+{
+    font-family: var(--font-family);
+    color: var(--main-color);
+}
+
+
+
+.notification_bill .drop_downed .arrow_top_icon svg
+{
+    color: #f5f5f5 !important;
+    position: absolute;
+    top:-14px;
+    left: 98.1%;
+}
+
+
+.notification_bill .closed
+{
+    display: none !important;
+}
+.notification_bill .opened
+{
+    display: flex !important;
+}
+
+@media (max-width:576px)
+{
+    .notification_bill
+    {
+        width: 320px;
+    }
+    .notification_bill .drop_downed
+    {
+        left: -20px;
+    }
+    .notification_bill .drop_downed div
+    {
+        width: 320px;
+    }
+    .notification_bill .drop_downed .arrow_top_icon svg
+    {
+        left: -51px;
+    }
+}
+
+@media (max-width:420px)
+{
+    .notification_bill
+    {
+        z-index: 50000;
+    }
+}

@@ -1,0 +1,387 @@
+
+
+@import url("../styles/homeStyles/__heroSectExplore.css");
+@import url("../styles/homeStyles/__shop.css");
+@import url("../styles/homeStyles/__services.css");
+@import url("../styles/homeStyles/__news.css");
+@import url("../styles/homeStyles/__newsLetter.css");
+
+:root
+{
+    /* --main-color1:#002f8d; */
+    --main-color1:#014797;
+    --my-color1:#e0eaff;
+    /* --my-color1:#ffecce; */
+    --my-color2:#faec71;
+    --bg-yellow:#faf5c2b0;
+    --transition:all .5s ease-in-out;
+    --font-DM-SANS:'DM Sans', sans-serif;
+}
+
+.alert-success
+{
+    background-color: var(--main-color1) !important;
+    color: #e0eaff !important;
+    border: transparent !important;
+    border-left: 3px solid #e0eaff;
+    box-shadow:rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px !important;
+}
+.alert-success button
+{
+    border: transparent !important;
+    outline: none !important;
+}
+.alert-success button span
+{
+    color: #e0eaff !important;
+}
+
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus,
+.btn.active.focus,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.btn-success:active:focus,
+.btn-success.active:focus,
+.btn-success.focus,
+.btn-success:active.focus,
+.btn-success.active.focus,
+.btn-success.active.focus {
+    outline: 0.3px solid var(--main-color1) !important;
+}
+
+.body_shadow
+{
+    position: relative;
+}
+.body_shadow::after
+{
+    content: "";
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    opacity: .5;
+    z-index: 12;
+}
+
+.search,
+.search2
+{
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    transition: var(--transition);
+    background-color: #FFF;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    z-index: 40;
+}
+.search2
+{
+    top: 107px;
+}
+.search_close,
+.search_close2
+{
+    display: none;
+}
+.search_open,
+.search_open2
+{
+    display: block;
+    animation-name: searchBarAnim;
+    animation-duration: .45s;
+    animation-timing-function: ease-in-out;
+}
+
+.search button
+{
+    border: transparent !important;
+}
+.search button:hover
+{
+    background-color: var(--main-color1);
+    transform: scale(1.02);
+    transition: var(--transition);
+}
+.search .close_search_bar i
+{
+    color: var(--main-color1) !important;
+    transition: var(--transition);
+}
+.search .close_search_bar i:hover
+{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+
+@keyframes searchBarAnim
+{
+    0%
+    {
+        transform: translate(0,20px);
+    }
+    100%
+    {
+        transform: translate(0,0);
+    }
+}
+
+.search .close_search_bar i,
+.search2 .close_search_bar2 i
+{
+    font-size: 26px;
+    color: var(--main-color);
+}
+.search input,
+.search2 input
+{
+    width: 500px;
+    height: 53px;
+}
+.search a,
+.search2 a
+{
+    transition: var(--transition);
+}
+.search a:hover,
+.search2 a:hover
+{
+    transform: scale(1.05);
+}
+
+.search form button
+{
+    background-color: var(--main-color1);
+}
+
+/* ========== */
+
+.hero_section
+{
+    width:100%;
+    height: 65vh;
+    background-color: var(--my-color1);
+}
+
+.hero_section .hero_section_text
+{
+    width: 70%;
+}
+
+.hero_section .hero_section_text h1
+{
+    font-family:var(--font-DM-SANS);
+    font-weight: 500;
+}
+
+.hero_section .hero_section_text a
+{
+    border: 2px solid var(--main-color1) !important;
+    background-color: var(--main-color1) !important;
+    transition: var(--transition);
+}
+
+.hero_section .hero_section_img img
+{
+     width: 450px;
+     height: 500px;
+     z-index: 5 !important;
+}
+
+.float_ticket
+{
+    position: absolute;
+    left: 71%;
+    top: 40px;
+    z-index: 10;
+}
+
+.float_ticket div
+{
+    width: 80px;
+    height: 80px;
+    background-color: var(--main-color1);
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.headphone_details
+{
+    width: 250px;
+    background-color: var(--my-color1);
+    background-color: #acbacbdb;
+    background-color: var(--main-color1);
+    color: #FFFF;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    z-index: 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.headphone_details h5
+{
+    font-size: 27px;
+    font-family: var(--font-DM-SANS);
+}
+
+.headphone_details .headphone_rating i
+{
+    font-size: 12px;
+    color: #fcce29;
+}
+
+.headphone_details .headphone_price p span
+{
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.headphone_details .headphone_price del
+{
+    color: #ff5c5c;
+    font-size: 15px;
+}
+
+
+
+@media (max-width:1200px)
+{
+    .headphone_details
+    {
+        top: 48%;
+        left: -95px;
+    }
+}
+
+@media (max-width:1149px)
+{
+     .headphone_details
+     {
+         top: 48%;
+         left: -127px;
+     }
+}
+
+@media (max-width:992px)
+{
+    .hero_section .hero_section_img img
+    {
+        position: absolute;
+        top: -360px;
+        opacity: .2;
+        z-index: 10;
+    }
+    .float_ticket
+    {
+        position: absolute;
+        left: 83%;
+        top: -260px;
+        z-index: 10;
+        opacity: .3;
+    }
+    .headphone_details
+    {
+        display: none;
+    }
+}
+
+@media (max-width:776px)
+{
+    .float_ticket
+    {
+        position: absolute;
+        left: 77%;
+        top: -260px;
+        z-index: 10;
+        opacity: .3;
+    }
+    .hero_section .hero_section_img img {
+        z-index:0 !important;
+    }
+    .hero_section .hero_section_text
+    {
+        z-index: 10;
+    }
+}
+
+@media (max-width:660px)
+{
+    .search2 form input
+    {
+        width: 60%;
+    }
+}
+
+@media (max-width:576px)
+{
+    .hero_section .hero_section_text
+     {
+         width: 100% !important;
+     }
+}
+
+@media (max-width:500px)
+{
+    .hero_section .hero_section_img img {
+        width: 100%;
+        height: auto;
+        margin-top: 60px;
+    }
+
+    .float_ticket
+    {
+        display: none;
+    }
+
+    .search2 form input
+    {
+        width: 90%;
+    }
+    .search2 form div
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+    .search2 form button
+    {
+        margin: 0 !important;
+        margin-top: 25px !important;
+        width: 250px;
+    }
+
+}
+
+@media (max-width:450px)
+{
+    .search2 h1
+    {
+        font-size: 25px;
+    }
+}
+
+@media (max-width:400px)
+{
+    .hero_section .hero_section_text h1
+    {
+        font-size: 26px;
+    }
+    .hero_section .hero_section_img img {
+        margin-top: 80px;
+    }
+}

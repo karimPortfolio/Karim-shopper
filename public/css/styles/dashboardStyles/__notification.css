@@ -1,0 +1,22 @@
+
+
+.notification_details h1
+{
+    font-size: 40px;
+    color: var(--main-color1);
+    font-family: var(--font-family);
+}
+
+
+.notification_details h3
+{
+    color: var(--main-color1);
+    font-weight: 500;
+    font-family: var(--font-family);
+    font-size: 20px;
+}
+
+.notification_details p
+{
+    font-family: var(--font-family);
+}

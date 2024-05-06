@@ -1,0 +1,14 @@
+
+@import url(./productDetails/__productInfo.css);
+@import url(./productDetails/__comments.css);
+
+
+:root
+{
+    --my-color2:#faec71;
+    --bg-yellow:#faf5c2b0;
+    --transition:all .5s ease-in-out;
+    --font-DM-SANS:'DM Sans', sans-serif;
+}
+
+

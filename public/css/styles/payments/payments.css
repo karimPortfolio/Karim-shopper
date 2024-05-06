@@ -1,0 +1,48 @@
+
+.payments form label
+{
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+.payments form input
+{
+    height: 56px;
+}
+.payments form input:focus
+{
+     outline: 2px solid #0147974c !important;
+     border: 1px solid #7777774b !important;
+}
+.payments form button
+{
+    height: 60px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 22px;
+    background-color: var(--main-color) !important;
+    transition: var(--transition);
+}
+.payments form button:hover
+{
+    transform: scale(1.02);
+}
+
+.payments .secondPartCard
+{
+    background-color:var(--my-color1);
+}
+
+.payments .creditCardVisa,
+.payments .creditCardMasterC
+{
+    display: none;
+    position: absolute;
+    left: 30px;
+    width: 30px;
+    height: 20px;
+}
+
+.error_handler
+{
+    display: none;
+}

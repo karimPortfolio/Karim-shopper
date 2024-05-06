@@ -1,0 +1,124 @@
+
+
+@import url(./dashboardStyles/__dashboardHeroSection.css);
+@import url(./dashboardStyles/__orders.css);
+@import url(./dashboardStyles/__dashboardNavbar.css);
+@import url(./dashboardStyles/__notification.css);
+
+:root
+{
+    /* --main-color1:#4bb647; */
+    --bg-yellow:#faf5c2b0;
+    --transition:all .5s ease-in-out;
+}
+
+
+
+.dashboardShowProducts
+{
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.dashboardShowProducts a
+{
+    color: white !important;
+    background-color: var(--main-color1);
+    width: 180px !important;
+    height: 45px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px #0000002d;
+}
+
+
+.btnAddProduct
+{
+    background-color: var(--main-color1) !important;
+    border: 2px solid var(--main-color1) !important;
+    border-radius: 5px !important;
+    color:#FFFF !important;
+    transition: var(--transition);
+}
+
+
+.addProductDashboard form input,
+.addProductDashboard form select
+{
+    border-radius: 5px;
+    border: 1px solid #00000022;
+}
+
+.addProductDashboard form button
+{
+    height: 50px;
+}
+
+
+.deleteProductForm button
+{
+    background-color: #c92333 !important;
+}
+
+.dashboard_account_management_profile a,
+.dashboard_account_management_profile ~ form a
+{
+    text-decoration: none !important;
+}
+
+.dashboard_account_management_profile a:hover,
+.dashboard_account_management_profile ~ form a:hover
+{
+    color: var(--main-color1);
+}
+
+.dashboard_analytics .analytics_cards h5 span
+{
+    font-size: 12px;
+}
+
+.all_notifications h5
+{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.all_notifications p
+{
+    font-size: 14px;
+    font-family: var(--font-family);
+}
+
+.all_notifications .notification_time
+{
+    color: #7e7e7eee;
+    font-size: 12px;
+}
+
+.all_notifications .unreaded
+{
+    background-color:#eeee;
+}
+
+.all_notifications .readed
+{
+    background-color: transparent;
+}
+
+.all_notifications .readed:hover
+{
+    background-color:#eeee;
+}
+
+
+
+@media (max-width:540px)
+{
+    .addProductDashboard form
+    {
+        width: 95% !important;
+    }
+}
