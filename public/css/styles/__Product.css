@@ -68,8 +68,12 @@
 {
     border-radius: 6px;
     width: 100%;
+<<<<<<< HEAD
     height: 260px;
     object-fit: cover;
+=======
+    height: auto;
+>>>>>>> a988dfa482cd2369484291ac377cabea04843250
 }
 .products_grid .card .whishlist_add
 {

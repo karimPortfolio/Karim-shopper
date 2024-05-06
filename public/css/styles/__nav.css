@@ -257,12 +257,15 @@ nav .badge-pill {
     transform: translate(-9px, -18px);
 }
 
+<<<<<<< HEAD
 #navbar .dropdown .dropdown-menu a svg
 {
     color: var(--main-color);
 
 }
 
+=======
+>>>>>>> a988dfa482cd2369484291ac377cabea04843250
 
 
 @media (max-width:554px) {

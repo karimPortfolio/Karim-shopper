@@ -23,7 +23,24 @@
             </li>
             <li class="nav-item ml-4">
                  <!--<a class="nav-link ml-4" style="transition:all .5s ease-in-out;" href="/produits/Fruits&Vegetables">Shop</a> -->
+<<<<<<< HEAD
                  @include('homeComp.navbarComp.CategoriesDropdown')
+=======
+                 <div class="dropdown">
+                    <a class="text-black dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                      Categories
+                    </a>
+
+                    <div class="dropdown-menu" style="width:300px;">
+                         <a class="dropdown-item py-2 text-dark" href="products/Smartphones&Tablets">Smartphones</a>
+                         <a class="dropdown-item py-2" href="products/Smartphones&Tablets">Tablets</a>
+                         <a class="dropdown-item py-2" href="products/Laptops&Consoles">Laptops</a>
+                         <a class="dropdown-item py-2" href="products/Laptops&Consoles">Consoles</a>
+                         <a class="dropdown-item py-2" href="products/Headphones&Accessories">Headphones</a>
+                         <a class="dropdown-item py-2" href="products/Headphones&Accessories">Accessories</a>
+                    </div>
+                  </div>
+>>>>>>> a988dfa482cd2369484291ac377cabea04843250
             </li>
             <li class="nav-item ml-4">
                 <a class="nav-link text-black" style="transition:all .5s ease-in-out;" href="">Shop</a>
