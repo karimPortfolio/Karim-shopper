@@ -1,3 +1,5 @@
+<p align="center"><a href="https://github.com/KarimPortfolio/Karim-shopper" target="_blank"><img src="https://firebasestorage.googleapis.com/v0/b/karim-portfolio-bc1e8.appspot.com/o/ecommerceLogo.png?alt=media&token=0caf3a18-5442-48c1-b394-64709f12de62&_gl=1*teushu*_ga*MTI3NDU3ODg1LjE2ODk0NTU1ODk.*_ga_CW55HF8NVT*MTY5NzQwNDI0OS4yMS4xLjE2OTc0MDQ1NjMuNjAuMC4w" width="400" alt="Laravel Logo"></a></p>
+
 
 # Karim's Shopper
 
