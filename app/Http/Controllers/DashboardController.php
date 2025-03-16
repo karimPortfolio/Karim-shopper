@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\models\User;
+use App\Models\User;
 use App\Models\Order;
-use App\models\Product;
-use App\models\Purchase;
+use App\Models\Product;
+use App\Models\Purchase;
 use App\Models\Whishlist;
 use Illuminate\Http\Request;
 use Cartalyst\Stripe\Api\Orders;
