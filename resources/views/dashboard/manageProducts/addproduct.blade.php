@@ -36,11 +36,7 @@
                               </div>
                               <div class="mb-3">
                                   <label for="exampleInputEmail1" class="form-label">Brand</label>
-<<<<<<< HEAD
                                   <input type="text" class="form-control" name="brand" id="exampleInputEmail1" placeholder="Example: Apple" aria-describedby="emailHelp">
-=======
-                                  <input type="number" class="form-control" name="product_discount" id="exampleInputEmail1" placeholder="Example: Apple" aria-describedby="emailHelp">
->>>>>>> a988dfa482cd2369484291ac377cabea04843250
                               </div>
                           </div>
                            <div class="mb-3 d-flex flex-column">
