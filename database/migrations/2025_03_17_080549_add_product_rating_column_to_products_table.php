@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->float('rating', 2, 1)->default(0)->after('price');
+            $table->float('product_rating', 2, 1)->default(0)->after('price');
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('rating');
+            $table->dropColumn('product_rating');
         });
     }
 };
