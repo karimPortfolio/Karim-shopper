@@ -1,9 +1,5 @@
 
-<<<<<<< HEAD
 <div  class="py-4 mt-5 ml-3 mx-sm-5 px-4 all_comments border rounded">
-=======
-<div class="py-4 mt-5 ml-3 mx-sm-5 px-4 all_comments border rounded">
->>>>>>> a988dfa482cd2369484291ac377cabea04843250
     <div class="d-flex justify-content-start align-items-center">
         <h4 class="">Top comments ({{ $comments->count() }})</h4>
         <div class="d-flex justify-content-start align-items-center flex-column pb-1 pl-2">
@@ -16,25 +12,9 @@
         </div>
     </div>
     @foreach ($comments as $comment)
-<<<<<<< HEAD
         <div wire:ignore class="d-flex w-100 w-100 mt-5">
             <div class="user-img">
                 <img src="https://ui-avatars.com/api/?name={{ $comment->first_letter . '+' . $comment->last_letter }}&color=ffff&background={{ $randomColor }}" alt="">
-=======
-        <div class="d-flex w-100 w-100 mt-5">
-            <div class="user-img">
-                @php
-                    $colors = ['FF5733', '47ACB1', 'FFC300', 'A33EA1', '4CAF50', 'FF5733', '5E35B1', 'FF9800', 'E91E63','009688','FF5252','2196F3','673AB7','F44336','9C27B0','03A9F4','009688','FF5722','607D8B'];
-                    $collection = collect($colors);
-                    $randomColor = $collection->random();
-                    $name = $comment->user->name;
-                    $delimiter = ' ';
-                    $name = explode($delimiter, $name);
-                    $firstLetter = str_split($name[0]);
-                    $secondLetter = str_split($name[1]);
-                @endphp
-                <img src="https://ui-avatars.com/api/?name={{ $firstLetter[0] . '+' . $secondLetter[0] }}&color=ffff&background={{ $randomColor }}" alt="">
->>>>>>> a988dfa482cd2369484291ac377cabea04843250
             </div>
             <div class="comment-details  py-2 px-3 rounded ml-4">
                 <div class="d-flex justify-content-between align-items-center">
