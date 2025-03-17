@@ -43,7 +43,7 @@
                               <label for="exampleInputEmail1" class="form-label" >Category <span class="text-danger">*</span></label>
                               <select class="form-select form-select-lg mb-3 @error('category') is-invalid @enderror" name="category" aria-label=".form-select-lg example">
                                 <option selected value="Headphones&Accessories">Headphones & Accessories</option>
-                                <option value="Smartpones&Tablets">Smartpones & Tablets</option>
+                                <option value="Smartphones&Tablets">Smartpones & Tablets</option>
                                 <option value="Laptops&Consoles">Laptops & Consoles</option>
                               </select>
                                @error('category')
