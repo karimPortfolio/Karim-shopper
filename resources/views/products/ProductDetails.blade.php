@@ -1,5 +1,4 @@
-
-@extends('master_page')
+@extends('Master_page')
 
 @livewireStyles
 
