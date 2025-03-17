@@ -72,7 +72,7 @@
                 <li class="nav-item mt-4 ml-4">
                     <a class="nav-link" style="transition:all .5s ease-in-out;" href="">Shop</a>
                 </li>
-                <li class="mx-4 nav-item nav-cart-icon d-flex justify-content-start align-items-start  mt-4 ml-4">
+                {{-- <li class="mx-4 nav-item nav-cart-icon d-flex justify-content-start align-items-start  mt-4 ml-4">
                     <span>Your cart:</span>
                     <a href="/cart" class="ml-4 mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
@@ -85,7 +85,7 @@
                          @endif
                        @endif
                     </a>
-                </li>
+                </li> --}}
 
                <div class="mob_nav_socials mt-5 d-flex justify-content-center align-items-center ml-4">
                      <p class="m-0">Follow us</p>

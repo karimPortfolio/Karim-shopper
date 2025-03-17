@@ -1,0 +1,323 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+
+/* Decorative elements */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.1);
+    z-index: 0;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: 10%;
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    left: 15%;
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.shape-3 {
+    width: 100px;
+    height: 100px;
+    top: 30%;
+    left: 5%;
+    background: rgba(59, 130, 246, 0.03);
+}
+
+/* Carousel Styles */
+.carousel-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: none;
+    box-shadow: inset -10px 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.4) 0%, rgba(37, 99, 235, 0.3) 100%);
+    z-index: 1;
+}
+
+.carousel-content {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    color: white;
+    z-index: 10;
+    max-width: 70%;
+}
+
+.carousel-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-nav {
+    position: absolute;
+    bottom: 30px;
+    right: 60px;
+    display: flex;
+    z-index: 10;
+    gap: 10px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: white;
+    transform: scale(1.3);
+}
+
+.login-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+.form-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    outline: none;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 42px;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.input-with-icon {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.input-icon {
+    position: absolute !important;
+    left: 14px !important;
+    z-index: 10 !important;
+}
+
+.form-input-enhanced {
+    width: 100% !important;
+    padding: 1rem 1rem 1rem 40px !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    background: #f8fafc !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+}
+
+.form-input-enhanced:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+    outline: none !important;
+    transform: translateY(-1px) !important;
+}
+
+.password-toggle-enhanced {
+    position: absolute !important;
+    right: 15px !important;
+    cursor: pointer !important;
+    color: #64748b !important;
+    transition: color 0.2s ease !important;
+}
+
+.password-toggle-enhanced:hover {
+    color: #3b82f6 !important;
+}
+                
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+}
+
+.forgot-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+    color: #1e40af;
+}
+
+.login-button {
+    width: 100% !important;
+    padding: 1rem !important;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+    margin: 1rem 0 !important;
+    position: relative !important;
+    z-index: 5 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 2rem;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.signup-link a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+    color: #1e40af;
+}
+
+@media (min-width: 768px) {
+    .carousel-container {
+        display: block;
+    }
+}
