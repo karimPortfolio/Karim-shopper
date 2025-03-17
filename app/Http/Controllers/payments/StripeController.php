@@ -117,8 +117,7 @@ class StripeController extends Controller
 
         if ($validate) {
             $stripe = new \Stripe\StripeClient(
-                "sk_test_51LYxtJCZrDMfMWUt32LYznlvQe0HF59onrTeCeK2wWqTIIhOgbqnIOixTDxgtYDUVgFFSydcI3Ee4hwY3r9s2Lzr00MxHjcg3q"
-               // env("STRIPE_SECRET")
+               config('stripe.secret_key')
             );
 
             try {
