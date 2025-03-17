@@ -2,12 +2,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <title>Login | Karim Shopper</title>
 
+<style>
+    body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+</style>
+
 <x-guest-layout>
     <div class="login-container">
         <!-- Decorative shapes -->
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
+        <div clbass="shape shape-3"></div>
 
         <!-- Image Carousel -->
         <div class="carousel-container">
