@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::table('orders', function (Blueprint $table) {
             $table->string("city")->after("address");
             $table->string("country")->after("city");
+            $table->string("notes")->nullable()->after("country");
             // rename column pincode to postcode
             $table->renameColumn("pincode", "postcode");
         });
@@ -31,6 +32,7 @@ return new class extends Migration
         Schema::table('orders', function (Blueprint $table) {
             $table->dropColumn("city");
             $table->dropColumn("country");
+            $table->dropColumn("notes");
             // rename column postcode to pincode
             $table->renameColumn("postcode", "pincode");
         });
