@@ -64,7 +64,7 @@ class StripeController extends Controller
             "country" => "required|string|max:30",
             "postcode" => "required|string|max:8|min:5",
             "address" => "required|string|max:300",
-            "notes" => "required|string|max:500",
+            "notes" => "nullable|string|max:500",
             "phone" => "required|string|max:11|min:10",
         ]);
 
@@ -117,7 +117,7 @@ class StripeController extends Controller
 
         if ($validate) {
             $stripe = new \Stripe\StripeClient(
-                "sk_test_51N9mTHDulEW9VVeptGJ2MFKnCvEcBTrV37O8uWshMsOJctm7Y5dWB1TxnEgLZrv2FLSkxgRHs5UHPlzEbtsBUQpM008Qo1q7aD"
+                "sk_test_51LYxtJCZrDMfMWUt32LYznlvQe0HF59onrTeCeK2wWqTIIhOgbqnIOixTDxgtYDUVgFFSydcI3Ee4hwY3r9s2Lzr00MxHjcg3q"
                // env("STRIPE_SECRET")
             );
 
