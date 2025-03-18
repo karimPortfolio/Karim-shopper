@@ -1,31 +1,59 @@
 @if (Route::has('login'))
-@auth
-    <li class="d-flex justify-content-center align-items-center ml-4">
-        <a style="color:grey;text-decoration:none; " href="{{ url('/dashboard') }}" class=" homeUserProfile ">
-            @if (Auth::user()->profile_photo_url)
-                <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url}}" alt="{{ Auth::user()->name }}" />
-            @else
-                @php
-                    $name = Auth::user()->name;
-                    $delimiter = ' ';
-                    $name = explode($delimiter, $name);
-                    $firstLetter = str_split($name[0]);
-                    $secondLetter = str_split($name[1]);
-                @endphp
-                <img class="h-8 w-8 rounded-full object-cover" src="https://ui-avatars.com/api/?name={{ $firstLetter[0] . '+' . $secondLetter[0] }}&color=014797&background=e0eaff" alt="{{ Auth::user()->name }}" />
+    @auth
+        <li class="nav-item dropdown user-profile-container">
+            <a class="nav-link dropdown-toggle user-profile-link" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="avatar-container">
+                    @if (Auth::user()->profile_photo_url)
+                        <img class="avatar-image" src="{{ Auth::user()->profile_photo_url}}" alt="{{ Auth::user()->name }}" />
+                    @else
+                        @php
+                            $name = Auth::user()->name;
+                            $nameParts = explode(' ', $name);
+                            $initials = isset($nameParts[1]) 
+                                ? substr($nameParts[0], 0, 1) . substr($nameParts[1], 0, 1) 
+                                : substr($nameParts[0], 0, 1);
+                        @endphp
+                        <img class="avatar-image" src="https://ui-avatars.com/api/?name={{ $initials }}&color=ffffff&background=7C3AED" alt="{{ Auth::user()->name }}" />
+                    @endif
+                    <div class="avatar-status-indicator"></div>
+                </div>
+                <span class="user-name d-none d-md-inline ml-2">{{ Str::limit(Auth::user()->name, 12) }}</span>
+            </a>
+            <div class="dropdown-menu user-dropdown shadow-lg" aria-labelledby="userDropdown">
+                <div class="dropdown-header pb-3">
+                    <span class="font-weight-bold">{{ Auth::user()->name }}</span>
+                    <small class="d-block text-muted">{{ Auth::user()->email }}</small>
+                </div>
+                <button class="dropdown-item d-flex align-items-center py-2 border-0 transition-effect" onclick="window.location.href='{{ url('/dashboard') }}'">
+                    <i class="fas fa-gauge-high mr-3 text-purple-600"></i> 
+                    <span>Dashboard</span>
+                </button>
+                <button class="dropdown-item d-flex align-items-center py-2 border-0 transition-effect" onclick="window.location.href='{{ route('profile.show') }}'">
+                    <i class="fas fa-user-circle mr-3 text-purple-600"></i> 
+                    <span>Profile</span>
+                </button>
+                <div class="dropdown-divider my-2"></div>
+                <form method="POST" action="{{ route('logout') }}" class="w-100">
+                    @csrf
+                    <button type="submit" class="dropdown-item d-flex align-items-center py-2 border-0 text-danger transition-effect">
+                        <i class="fas fa-sign-out-alt mr-3"></i> 
+                        <span>Sign out</span>
+                    </button>
+                </form>
+            </div>
+        </li>
+    @else
+        <li class="nav-item auth-buttons d-flex gap-2">
+            @if (Route::has('register'))
+                <button class="btn rounded-pill px-4 py-2 border-0 d-flex align-items-center sign-up-btn" onclick="window.location.href='{{ route('register') }}'">
+                    <span class="btn-icon d-inline-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+                            <path d="M12 6c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm0 8c3.866 0 7 1.343 7 3v1h-14v-1c0-1.657 3.134-3 7-3zm7-8h3v2h-3v3h-2v-3h-3v-2h3v-3h2v3z" fill-rule="evenodd" clip-rule="evenodd"/>
+                        </svg>
+                    </span>
+                    <span>Sign up</span>
+                </button>
             @endif
-        </a>
-    </li>
-@else
-    {{-- <li class="d-flex justify-content-center align-items-center ml-4"><a style="color:grey;text-decoration:none;" href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li> --}}
-    @if (Route::has('register'))
-        {{-- <li class="d-flex justify-content-center align-items-center ml-4 "><a style="color:grey;text-decoration:none;" href="{{ route('register') }}" class="ml-4 text-sm btn btn-success signup-btn text-white d-flex justify-content-center align-items-center">Sign up</a></li> --}}
-        <li class="d-flex justify-content-center align-items-center ml-4 "><a href="{{ route('register') }}" class=" signup-btn d-flex justify-content-center align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-perso mr-1" viewBox="0 0 16 16">
-                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
-            </svg>
-            Sign up</a></li>
-    @endif
-@endauth
-{{-- </div> --}}
+        </li>
+    @endauth
 @endif
