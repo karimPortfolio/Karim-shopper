@@ -14,7 +14,7 @@
 
         <div class="col-10 col-sm-11 col-lg-9 dashboard_part2 py-7 px-4 px-sm-5">
             <h1 class="text-start">Welcome back, <span>{{ Auth::user()->name }}</span></h1>
-            <p class="mt-3 dashboard_intro">Your analytics dashboard</p>
+            <p class="dashboard_intro">Your analytics dashboard</p>
 
             @include('dashboard.dashboardAnalytics')
 
