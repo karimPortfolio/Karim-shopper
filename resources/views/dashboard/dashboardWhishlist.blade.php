@@ -66,17 +66,17 @@
             </ul>
         </div>
 
-        <div class="py-7 dashboard_part2 col-10 col-sm-11  col-lg-9">
+        <div class=" dashboard_part2 col-10 col-sm-11  col-lg-9">
             <div class="px-3 px-sm-5">
 
-                <div class="container w-100 flashMessages justify-content-center mt-3"
+                <div class="container w-100 flashMessages justify-content-center mt-4"
                     style="transition: all .5s ease-in-out">
                     @include('flashMessages.flash')
                 </div>
 
                 <div>
                     <h3 class="m-0 fw-bold d-flex align-items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
                             class="bi bi-box2-heart" viewBox="0 0 16 16">
                             <path d="M8 7.982C9.664 6.309 13.825 9.236 8 13 2.175 9.236 6.336 6.31 8 7.982" />
                             <path
@@ -85,7 +85,6 @@
                         Whishlist
                     </h3>
                     <p class="text-muted mb-0">
-                        <i class="bi bi-info-circle me-1"></i>
                         Manage your whishlist products
                     </p>
                 </div>
