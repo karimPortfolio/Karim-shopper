@@ -8,7 +8,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 
-<div class="row">
+{{-- <div class="row">
     <div class="col-12">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb pl-5">
@@ -18,7 +18,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
           </ol>
         </nav>
     </div>
-</div>
+</div> --}}
 <section class="section-pagetop py-4 px-md-5">
     <div class="clearfix checkout_title px-3 px-sm-5">
         <h1 class="title-page">Checkout</h1>
@@ -62,11 +62,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 @csrf
                 <div class="row billingDetails">
                   <div class="col-md-8">
-                    <div class="card">
-                        <header class="card-header">
+                    <div class="card" style="width: 100% !important;">
+                        <header class="">
                             <h4 class="card-title mt-2">Billing Details</h4>
                         </header>
-                        <article class="card-body">
+                        <article class="">
                             <div class="form-row">
                                 <div class="col form-group">
                                     <label>Full name</label>
@@ -138,10 +138,10 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
-                                <header class="card-header">
+                                <header class="">
                                     <h4 class="card-title mt-2">Your Order</h4>
                                 </header>
-                                <article class="card-body">
+                                <article class="">
                                     <dl class="dlist-align">
                                         <table class="w-100">
                                             @foreach ($cartProducts as $product)

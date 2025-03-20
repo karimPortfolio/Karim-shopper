@@ -10,7 +10,7 @@ return new class extends Migration
     function up()
     {
         Schema::create('notifications', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
             $table->string('type');
             $table->morphs('notifiable');
             $table->text('data');
